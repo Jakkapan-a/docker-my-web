@@ -43,6 +43,8 @@ docker pull toodev/my-web:latest
 docker run --name my-web -d -p 80:80 toodev/my-web:latest 
 ```
 
+3. Open your browser and go to http://localhost or http://localhost:80
+
 ### How to remove the image and container
 1. Stop the container
 ```bash
