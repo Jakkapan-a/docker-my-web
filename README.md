@@ -40,7 +40,7 @@ docker pull toodev/my-web:latest
 
 2. Run the image
 ```bash
-docker run -d -p 80:80 toodev/my-web:latest --name my-web
+docker run --name my-web -d -p 80:80 toodev/my-web:latest 
 ```
 
 ### How to remove the image and container
