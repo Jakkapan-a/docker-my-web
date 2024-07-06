@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-5.2.3/css/bootstrap.min.css">
+    <style type="text/css">
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .img-hover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .img-hover:hover {
+            transform: scale(1.1);
+        }
+
+        .back-img {
+            height: 500px;
+            background-size: cover;
+            border-radius: 20px;
+        }
+        .carousel-inner{
+            position: relative;
+        }
+        .img-bg-05{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 500px;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            transition: 0.5s;
+            border-radius: 20px;
+        }
+        .carousel:hover .img-bg-05{
+            background-color: rgba(0, 0, 0, 0.0);
+        }
+    </style>
+    <title> My Web 8080</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">This is my web site port 80</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home section">
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-6 d-flex justify-content-center flex-column align-items-start p-5">
+                    <h1>Welcome to My Personal Website Port 80</h1>
+                    <p>My name is Jakkapan Attala</p>
+                    <p>ID: 66130030</p>
+                    <p>I am a web developer and I am also studying at Dhurakij Pundit University.</p>
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="/" class="btn btn-primary link" id="link">Go to Port 8080</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="images/img-01.jpg" alt="My Image" class="rounded float-start img-cover img-hover"
+                        width="500">
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="img-bg-05"></div>
+                        <div class="carousel-item active">
+                            <div class="d-block w-100 back-img" style="background-image: url('images/img-01.jpg');">
+                                <!-- <img src="images/img-02.jpg" class="d-block w-100" alt="img"> -->
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="d-block w-100 back-img" style="background-image: url('images/img-02.jpg');">
+                                <!-- <img src="images/img-03.jpg" class="d-block w-100" alt="img"> -->
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="d-block w-100 back-img" style="background-image: url('images/img-03.jpg');">
+                                <!-- <img src="images/img-04.jpg" class="d-block w-100" alt="img"> -->
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>&copy; 2024 My Personal Website. All Rights Reserved.</p>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script src="./bootstrap-5.2.3/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('link').addEventListener('click', function (e) {
+                e.preventDefault();
+                const url = window.location.href;
+                const port = '8080';
+                const ip = url.split('/')[2];
+                const newUrl = `http://${ip}:${port}`;
+                console.log(newUrl);
+                window.location.href = newUrl;
+            });
+        });
+    </script>
+</body>
+
+</html>

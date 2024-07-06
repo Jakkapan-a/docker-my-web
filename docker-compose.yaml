@@ -1,0 +1,16 @@
+services:
+  web-main:
+    build: .
+    container_name: Container1
+    ports:
+      - "8080:80"
+    
+  web-secondary:
+    image: httpd:2.4
+    container_name: Container2
+    ports:
+      - "80:80"
+    volumes:
+      - ./my-web-2:/usr/local/apache2/htdocs/
+      - ./my-web-1/bootstrap-5.2.3:/usr/local/apache2/htdocs/bootstrap-5.2.3/
+    

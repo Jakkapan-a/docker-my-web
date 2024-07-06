@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,14 @@
     <link rel="stylesheet" href="styles.css">
     <title>My Personal Website</title>
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="./index.html">My Personal Website</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -37,14 +40,17 @@
                     <p>My name is Jakkapan Attala</p>
                     <p>ID: 66130030</p>
                     <p>I am a web developer and I am also studying at Dhurakij Pundit University.</p>
-                     <div class="row">
-                        <div class="col-md-6">
-                            <a href="./research.html" class="btn btn-primary">Research</a>
+                    <div class="row">
+                        <!-- Link to port 8080 -->
+                        <div class="col-12">
+                            <!-- onclick="javascript.event.target.port=8080" -->
+                            <a href="./" class="btn btn-primary link" id="link">Go to Web on Port 80</a>
                         </div>
-                     </div>
+                    </div>
                 </div>
                 <div class="col-md-6">
-                    <img src="images/my-01.jpg" alt="My Image" class="rounded float-start img-cover img-hover" width="500">
+                    <img src="images/my-01.jpg" alt="My Image" class="rounded float-start img-cover img-hover"
+                        width="500">
                 </div>
             </div>
         </div>
@@ -52,13 +58,27 @@
 
 
     <footer class="footer">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p>&copy; 2024 My Personal Website. All Rights Reserved.</p>
-                </div>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <p>&copy; 2024 My Personal Website. All Rights Reserved.</p>
             </div>
         </div>
+        </div>
     </footer>
-<script src="./bootstrap-5.2.3/js/bootstrap.min.js"></script>
+    <script src="./bootstrap-5.2.3/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('link').addEventListener('click', function (e) {
+                e.preventDefault();
+                const url = window.location.href;
+                const port = '80';
+                const ip = url.split('/')[2].split(':')[0];
+                const newUrl = `http://${ip}:${port}`;
+                console.log(newUrl);
+                window.location.href = newUrl;
+            });
+        });
+    </script>
 </body>
+
 </html>
