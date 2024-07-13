@@ -43,8 +43,8 @@
                     <div class="row">
                         <!-- Link to port 8080 -->
                         <div class="col-12">
-                            <!-- onclick="javascript.event.target.port=8080" -->
-                            <a href="./" class="btn btn-primary link" id="link">Go to Web on Port 80</a>
+                            <!-- <a href="./" class="btn btn-primary link" id="link">Go to Web on Port 80</a> -->
+                            <a href="./about" class="btn btn-primary">About</a>
                         </div>
                     </div>
                 </div>
@@ -71,7 +71,7 @@
             document.getElementById('link').addEventListener('click', function (e) {
                 e.preventDefault();
                 const url = window.location.href;
-                const port = '80';
+                const port = '8000';
                 const ip = url.split('/')[2].split(':')[0];
                 const newUrl = `http://${ip}:${port}`;
                 console.log(newUrl);
